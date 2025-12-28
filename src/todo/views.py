@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello World!")
+    data: Dict[str, str] = {
+        'insert_something': "views.pyのinsert_something部分です。",
+    }
+
+    return render(request, "index.html", data)
